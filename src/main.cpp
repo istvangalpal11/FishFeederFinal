@@ -5,6 +5,10 @@ Servo myServo;
 
 // test servo angle sweep
 
+// this is the new modification
+
+//lest go
+
 void setup() {
   myServo.attach(9);  // Control pin
 }
