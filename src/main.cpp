@@ -7,8 +7,7 @@ Servo myServo;
 
 // this is the new modification
 
-//lest go
-
+//lest go II
 void setup() {
   myServo.attach(9);  // Control pin
 }
