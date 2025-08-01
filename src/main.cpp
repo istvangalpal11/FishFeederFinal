@@ -1,13 +1,12 @@
 #include <Arduino.h>
 #include <Servo.h>
+#include <TimeLib.h>
+#include <DS1302.h>
 
 Servo myServo;
 
 // test servo angle sweep
 
-// this is the new modification
-
-//lest go II
 void setup() {
   myServo.attach(9);  // Control pin
 }
