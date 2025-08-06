@@ -1,14 +1,21 @@
-#include <MG996R_module.h>
+#include "MG996R_module.h"
 
-Servo gateServo;
+// Servo object definitions (global instances)
+Servo gate1, gate2, gate3;
 
-void initServo(){
-    gateServo.attach(10);
+const int gate1PIN = 2, gate2PIN = 3, gate3PIN = 4;
+
+void initServo() {
+    gate1.attach(gate1PIN);
+    gate2.attach(gate2PIN);
+    gate3.attach(gate3PIN);
 }
 
-void testServo(){
-  gateServo.write(90);  // Open gate
-  delay(2000);          // Wait 2 seconds
-  gateServo.write(0);   // Close gate
-  delay(5000);          // Wait before next cycle
+void openGate(Servo& gate, int reps, int rotAng) {
+  for (int i = 0; i < reps; i++) {
+    gate.write(rotAng);  // Open gate
+    delay(5000);
+    gate.write(0);        // Close gate
+    delay(10000);
+  }
 }

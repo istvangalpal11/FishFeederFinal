@@ -6,10 +6,10 @@ void initFan() {
   pinMode(fanRelayPin, OUTPUT);
 }
 
-void testFan() {
+void startFan() {
   digitalWrite(fanRelayPin, HIGH);  // Relay ON 
-  delay(3000); // Fan runs 3 sec
+}
 
-  digitalWrite(fanRelayPin, LOW); // Relay OFF
-  delay(10000);
+void stopFan() {
+  digitalWrite(fanRelayPin, LOW);  // Relay OFF
 }

@@ -4,6 +4,7 @@
 #include <Arduino.h>
 
 void initFan();
-void testFan();
+void startFan();
+void stopFan();
 
 #endif
