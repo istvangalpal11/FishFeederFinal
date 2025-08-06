@@ -1,5 +1,4 @@
-#include <Arduino.h>
-#include <DS1302.h>
+#include <DS1302_module.h>
 
 const int RST_PIN = 8;
 const int DAT_PIN = 7;
@@ -10,7 +9,10 @@ DS1302 rtc(RST_PIN, DAT_PIN, CLK_PIN);
 bool fedMorning = false;
 bool fedEvening = false;
 
-void initTime() {
+int th1 = 12, tm1 = 40, th2 = 19, tm2 = 00;
+
+
+void initTime() {  //just for the FIRST use
 //   rtc.writeProtect(false);
 //   rtc.halt(false);
   
@@ -20,21 +22,21 @@ void initTime() {
 
 bool isFeedTime()
 {
-    Time t = rtc.time();  // Frissítjük az időt
+    Time t = rtc.time();  //query the current time
 
-    if (t.hr == 11 && t.min == 3 && !fedMorning)
+    if (t.hr == th1 && t.min == tm1 && !fedMorning)
     {
         fedMorning = true;
         return true;
     }
 
-    if (t.hr == 19 && t.min == 0 && !fedEvening)
+    if (t.hr == th2 && t.min == tm2 && !fedEvening)
     {
         fedEvening = true;
         return true;
     }
 
-    // Éjfél után 1 perccel újraengedélyezzük az etetést
+    //reset parameters at midnight
     if (t.hr == 0 && t.min == 1)
     {
         fedMorning = false;
@@ -46,7 +48,7 @@ bool isFeedTime()
 
 void digitalClockDisplay()
 {
-    Time t = rtc.time();  // Lekérjük az időt
+    Time t = rtc.time();  //query the current time
 
     Serial.print("Time: ");
 

@@ -4,8 +4,8 @@
 #include <DS1302.h>
 #include <Arduino.h>
 
-void initTime();
+void initTime(); //just for the first use
 bool isFeedTime();
-void digitalClockDisplay();
+void digitalClockDisplay(); //pretty print
 
 #endif

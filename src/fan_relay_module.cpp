@@ -7,9 +7,9 @@ void initFan() {
 }
 
 void testFan() {
-  digitalWrite(fanRelayPin, LOW);  // Relay ON (may be LOW-active)
+  digitalWrite(fanRelayPin, HIGH);  // Relay ON 
   delay(3000); // Fan runs 3 sec
 
-  digitalWrite(fanRelayPin, HIGH); // Relay OFF
-  delay(5000);
+  digitalWrite(fanRelayPin, LOW); // Relay OFF
+  delay(10000);
 }
