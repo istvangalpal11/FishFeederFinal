@@ -24,13 +24,13 @@ bool isFeedTime()
 {
     Time t = rtc.time();  //query the current time
 
-    if (t.hr == th1 && t.min == tm1 && !fedMorning)
+    if (t.hr == th1 && t.min == tm1 && !fedMorning) //breakfast
     {
         fedMorning = true;
         return true;
     }
 
-    if (t.hr == th2 && t.min == tm2 && !fedEvening)
+    if (t.hr == th2 && t.min == tm2 && !fedEvening) //dinner
     {
         fedEvening = true;
         return true;

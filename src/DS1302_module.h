@@ -5,7 +5,7 @@
 #include <Arduino.h>
 
 void initTime(); //just for the first use
-bool isFeedTime();
+bool isFeedTime(); //verify if there is feeding time
 void digitalClockDisplay(); //pretty print
 
 #endif
