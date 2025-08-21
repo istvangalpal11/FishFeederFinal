@@ -1,6 +1,7 @@
 #include "feeder_module.h"
 #include "MG996R_module.h"
 #include "fan_relay_module.h"
+#include "DS1302_module.h"
 
 struct PondConfig {
   Servo* gate;
@@ -9,12 +10,13 @@ struct PondConfig {
 };
 
 PondConfig ponds[3] = {
-  {&gate1, 2, 60},
-  {&gate2, 3, 90},
-  {&gate3, 2, 50}
+  {&gate1, 4, 100},
+  {&gate2, 0, 90},
+  {&gate3, 0, 50}
 };
 
 void feedingProcess() {
+  delay(3000);
   startFan();
 
   for (int i = 0; i < 3; i++) {
