@@ -7,6 +7,6 @@
 //  - feedingFlag: pointer to your global isFeeding flag in main.cpp
 void initFeedButton(int pin, bool* feedingFlag);
 
-void pollFeedButton();
+void checkFeedButton();
 
 #endif

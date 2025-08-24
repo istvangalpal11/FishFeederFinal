@@ -16,7 +16,7 @@ PondConfig ponds[3] = {
 };
 
 void feedingProcess() {
-  delay(3000);
+  delay(1000);
   startFan();
 
   for (int i = 0; i < 3; i++) {

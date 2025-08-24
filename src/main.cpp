@@ -7,7 +7,7 @@
 
 bool isFeeding = false; //check if there is a feeding process currently
 int buttonPin = 13;
-int th1=8, tm1=0, th2=19, tm2=0;
+int th1=8, tm1=0, th2=19, tm2=0; //2 feed/day
 
 void setup() {
   Serial.begin(9600);
@@ -19,12 +19,7 @@ void setup() {
 
 void loop() {
   //button for force-feeding
-  bool currentState = digitalRead(buttonPin);
-  if (digitalRead(buttonPin)==LOW && isFeeding==false) {
-    isFeeding=true;
-    feedingProcess(); //start the feeding, aporx.3 min
-    isFeeding=false;
-  }
+  checkFeedButton();
 
   //scheduled feeding
   if (isFeedTime() ) {

@@ -12,7 +12,7 @@ void initFeedButton(int pin, bool* feedingFlag) {
 }
 
 void checkFeedButton() {
-  if (buttonPin = 0 || isFeeding == nullptr) return; //not set yet
+  if (buttonPin == 0 || isFeeding == nullptr) return; //button not set yet
 
   // Button pressed (PULLUP logic: LOW = pressed)
   if (digitalRead(buttonPin) == LOW && !(*isFeeding)) {
